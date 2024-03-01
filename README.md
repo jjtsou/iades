@@ -1,2 +1,2 @@
 # iades
-A modern, responsive hotel website showcasing amenities and rooms. Built with Next.js
+A modern, responsive hotel website showcasing amenities and rooms. Built with Next.js.
