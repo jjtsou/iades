@@ -1,9 +1,5 @@
-import { Flex, Heading } from "@chakra-ui/react"
+import { Navbar } from "./components/Navbar"
 
 export default function Home() {
-  return (
-    <Flex mt="8" justifyContent="center" alignItems="center">
-      <Heading>I am a Heading</Heading>
-    </Flex>
-  )
+  return <Navbar />
 }
