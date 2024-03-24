@@ -1,122 +1,113 @@
 "use client"
 
+import { Fragment } from "react"
 import {
   Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Collapse,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
+  chakra,
+  Flex,
+  HStack,
+  IconButton,
+  VStack,
+  CloseButton,
+  Button,
+  VisuallyHidden,
 } from "@chakra-ui/react"
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
+import { AiOutlineMenu } from "react-icons/ai"
 import { Link } from "@chakra-ui/next-js"
-import { NAV_ITEMS } from "./constants"
-import { NavItem } from "./types"
+import NavItems from "./navItems"
 
-export const Navbar = () => {
-  const { isOpen, onToggle } = useDisclosure()
-
+const Navbar = () => {
+  const bg = useColorModeValue("white", "gray.800")
+  const mobileNav = useDisclosure()
   return (
-    <Box>
-      <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH="60px"
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle="solid"
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align="center"
+    <Fragment>
+      <chakra.header
+        bg={bg}
+        w="full"
+        px={{
+          base: 2,
+          sm: 4,
+        }}
+        py={4}
+        shadow="md"
       >
-        <Flex flex={{ base: 1, md: "auto" }} display={{ base: "flex", md: "none" }}>
-          <IconButton
-            onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "start" }}>
-          <Text fontFamily="heading" color={useColorModeValue("gray.800", "white")}>
-            Logo
-          </Text>
+        <Flex alignItems="center" justifyContent="space-between" mx="auto">
+          <HStack display="flex" spacing={3} alignItems="center">
+            <Box
+              display={{
+                base: "inline-flex",
+                md: "none",
+              }}
+            >
+              <IconButton
+                display={{
+                  base: "flex",
+                  md: "none",
+                }}
+                aria-label="Open menu"
+                fontSize="20px"
+                color="gray.800"
+                _dark={{
+                  color: "inherit",
+                }}
+                variant="ghost"
+                icon={<AiOutlineMenu />}
+                onClick={mobileNav.onOpen}
+              />
+              <VStack
+                pos="absolute"
+                top={0}
+                left={0}
+                right={0}
+                display={mobileNav.isOpen ? "flex" : "none"}
+                flexDirection="column"
+                p={2}
+                pb={4}
+                m={2}
+                bg={bg}
+                spacing={3}
+                rounded="sm"
+                shadow="sm"
+              >
+                <CloseButton
+                  aria-label="Close menu"
+                  justifySelf="self-start"
+                  onClick={mobileNav.onClose}
+                />
+                <NavItems />
+              </VStack>
+            </Box>
+            <Link href="/" title="Choc Home Page" display="flex" alignItems="center" px="3">
+              Logo
+              <VisuallyHidden>Choc</VisuallyHidden>
+            </Link>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
-          </Flex>
+            <HStack
+              display={{
+                base: "none",
+                md: "inline-flex",
+              }}
+            >
+              <NavItems />
+            </HStack>
+          </HStack>
+          <Box display={mobileNav.isOpen ? "none" : "flex"}>
+            <Link
+              href="https://www.booking.com/hotel/gr/iades-studios.el.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
+                Book Now
+              </Button>
+            </Link>
+          </Box>
         </Flex>
-        <Link
-          href="https://www.booking.com/hotel/gr/iades-studios.el.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
-            Book Now
-          </Button>
-        </Link>
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
+      </chakra.header>
+    </Fragment>
   )
 }
 
-const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200")
-  const linkHoverColor = useColorModeValue("var(--chakra-colors-whatsapp-600)", "white")
-  return (
-    <Stack direction="row" spacing={4}>
-      {NAV_ITEMS.map(({ label, href }) => (
-        <Box key={label}>
-          <Link
-            p={2}
-            href={href ?? "#"}
-            fontSize="sm"
-            fontWeight={500}
-            color={linkColor}
-            _hover={{
-              textDecoration: "none",
-              color: linkHoverColor,
-            }}
-          >
-            {label}
-          </Link>
-        </Box>
-      ))}
-    </Stack>
-  )
-}
-
-const MobileNav = () => (
-  <Stack bg={useColorModeValue("white", "gray.800")} p={4} display={{ md: "none" }}>
-    {NAV_ITEMS.map(({ label, href }) => (
-      <MobileNavItem key={label} label={label} href={href} />
-    ))}
-  </Stack>
-)
-
-const MobileNavItem = ({ label, href }: NavItem) => (
-  <Stack spacing={4}>
-    <Box
-      py={2}
-      as="a"
-      href={href ?? "#"}
-      justifyContent="space-between"
-      alignItems="center"
-      _hover={{
-        textDecoration: "none",
-      }}
-    >
-      <Text fontWeight={600} color={useColorModeValue("gray.600", "gray.200")}>
-        {label}
-      </Text>
-    </Box>
-  </Stack>
-)
+export default Navbar

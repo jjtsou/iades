@@ -1,6 +1,8 @@
+import { ReactElement } from "react"
+
 export type NavItem = {
+  id: string
   label: string
-  subLabel?: string
-  children?: Array<NavItem>
+  icon: ReactElement
   href?: string
 }
