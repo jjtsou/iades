@@ -8,17 +8,24 @@ import { Property } from "@/app/types"
 
 const Card = ({ property }: { property: Property }) => {
   return (
-    <Box
+    <Flex
+      direction="column"
       bg="white"
       _dark={{
         bg: "gray.800",
       }}
-      maxW="sm"
       borderWidth="1px"
       rounded="lg"
       shadow="lg"
+      m={{
+        base: 2,
+        sm: 4,
+        md: 8,
+        lg: 10,
+        xl: 12,
+      }}
     >
-      <Image src={property.imageUrl} alt={property.imageAlt} width={500} height={500} />
+      <Image src={property.imageUrl} alt={property.imageAlt} />
 
       <Box p="6">
         <Flex alignItems="baseline">
@@ -67,7 +74,7 @@ const Card = ({ property }: { property: Property }) => {
           </Button>
         </Link>
       </Flex>
-    </Box>
+    </Flex>
   )
 }
 
