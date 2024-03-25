@@ -34,7 +34,15 @@ const Layout = ({
 }: Readonly<{
   children: ReactNode
 }>) => (
-  <Flex direction="column" justifyContent="center" alignItems="center">
+  <Flex
+    direction="column"
+    justifyContent="space-between"
+    alignItems="center"
+    w="100%"
+    maxW="100vw"
+    h="100%"
+    maxH="100%"
+  >
     <Navbar />
     {children}
     <Footer />

@@ -1,13 +1,14 @@
-import { Flex } from "@chakra-ui/react"
-import Card from "./components/Card"
-import { properties } from "./constants"
+"use client"
+
+import { Box, Flex } from "@chakra-ui/react"
+import Slider from "./components/Slider"
 
 export default function Home() {
   return (
-    <Flex direction="column" p={50} w="auto" h="auto" gap={10} alignItems="center">
-      {properties.map(property => (
-        <Card key={property.id} property={property} />
-      ))}
+    <Flex direction="column" alignItems="center" gap={10}>
+      <Box>
+        <Slider />
+      </Box>
     </Flex>
   )
 }
