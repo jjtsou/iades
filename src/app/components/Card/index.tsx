@@ -1,5 +1,3 @@
-"use client"
-
 import { Link } from "@chakra-ui/next-js"
 import { Flex, Badge, Box, Text, Button } from "@chakra-ui/react"
 import Image from "next/image"
