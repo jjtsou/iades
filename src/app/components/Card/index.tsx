@@ -9,9 +9,6 @@ const Card = ({ property }: { property: Property }) => {
     <Flex
       direction="column"
       bg="white"
-      _dark={{
-        bg: "gray.800",
-      }}
       borderWidth="1px"
       rounded="lg"
       shadow="lg"
@@ -24,7 +21,6 @@ const Card = ({ property }: { property: Property }) => {
       }}
     >
       <Image src={property.imageUrl} alt={property.imageAlt} />
-
       <Box p="6">
         <Flex alignItems="baseline">
           <Badge rounded="full" px="2" colorScheme="teal">

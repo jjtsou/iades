@@ -49,9 +49,6 @@ const Navbar = () => {
                 aria-label="Open menu"
                 fontSize="20px"
                 color="gray.800"
-                _dark={{
-                  color: "inherit",
-                }}
                 variant="ghost"
                 icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
