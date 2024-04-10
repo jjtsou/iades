@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import { ReactNode } from "react"
 import { Flex } from "@chakra-ui/react"
 import Footer from "./components/Footer"
+import Hero from "./components/Hero"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -44,6 +45,7 @@ const Layout = ({
     maxH="100%"
   >
     <Navbar />
+    <Hero />
     {children}
     <Footer />
   </Flex>
