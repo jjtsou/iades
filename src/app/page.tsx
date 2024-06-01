@@ -27,7 +27,9 @@ export default function Home() {
           <Text color="var(--chakra-colors-whatsapp-600)" fontWeight="bold">
             Our Exceptional Services
           </Text>
-          <Heading color="gray.600">Discover the Finest Hotel Amenities</Heading>
+          <Heading color="gray.600" textAlign="center">
+            Discover the Finest Hotel Amenities
+          </Heading>
           <Text color="gray.600" maxW="30em" textAlign="center" marginX={5}>
             Experience the epitome of hospitality with our comprehensive range of services. From
             personalized assistance to exquisite amenities, we ensure your stay is nothing short of

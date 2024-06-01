@@ -2,8 +2,7 @@
 
 import { Link } from "@chakra-ui/next-js"
 import { Flex, Icon, Box, Text } from "@chakra-ui/react"
-import { FaFacebookSquare } from "react-icons/fa"
-import { TbBrandBooking } from "react-icons/tb"
+import { FaFacebookSquare, FaInstagram } from "react-icons/fa"
 
 const Footer = () => (
   <Flex w="full" bg="green.50" p={10} alignItems="center" justifyContent="center">
@@ -48,7 +47,7 @@ const Footer = () => (
           <FaFacebookSquare title="Facebook" size="20" />
         </Link>
         <Link
-          href="https://www.booking.com/hotel/gr/iades-studios.el.html"
+          href="https://www.instagram.com/iades_studios_naxos"
           target="_blank"
           rel="noreferrer"
           mx="1"
@@ -57,7 +56,7 @@ const Footer = () => (
             color: "var(--chakra-colors-whatsapp-600)",
           }}
         >
-          <TbBrandBooking title="Booking" size="22" />
+          <FaInstagram title="Instagram" size="22" />
         </Link>
       </Flex>
     </Flex>

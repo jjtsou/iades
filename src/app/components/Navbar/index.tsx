@@ -11,11 +11,12 @@ import {
   IconButton,
   VStack,
   CloseButton,
-  Button,
   VisuallyHidden,
 } from "@chakra-ui/react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Link } from "@chakra-ui/next-js"
+import { IoIosPhonePortrait } from "react-icons/io"
+import { FaRegEnvelope } from "react-icons/fa"
 import NavItems from "./navItems"
 
 const Navbar = () => {
@@ -76,9 +77,9 @@ const Navbar = () => {
                 <NavItems />
               </VStack>
             </Box>
-            <Link href="/" title="Choc Home Page" display="flex" alignItems="center" px="3">
+            <Link href="/" title="Iades Home Page" display="flex" alignItems="center" px="3">
               Logo
-              <VisuallyHidden>Choc</VisuallyHidden>
+              <VisuallyHidden>Iades</VisuallyHidden>
             </Link>
 
             <HStack
@@ -90,15 +91,29 @@ const Navbar = () => {
               <NavItems />
             </HStack>
           </HStack>
-          <Box display={mobileNav.isOpen ? "none" : "flex"}>
+          <Box
+            display={mobileNav.isOpen ? "none" : "flex"}
+            justifyContent="center"
+            alignItems="center"
+            gap={2}
+          >
             <Link
-              href="https://www.booking.com/hotel/gr/iades-studios.el.html"
-              target="_blank"
-              rel="noreferrer"
+              href="mailto:test@example.com"
+              color="gray.600"
+              _hover={{
+                color: "var(--chakra-colors-whatsapp-600)",
+              }}
             >
-              <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
-                Book Now
-              </Button>
+              <FaRegEnvelope size={25} title="Contact us" />
+            </Link>
+            <Link
+              href="tel:+123456789"
+              color="gray.600"
+              _hover={{
+                color: "var(--chakra-colors-whatsapp-600)",
+              }}
+            >
+              <IoIosPhonePortrait size={30} title="Call us" />
             </Link>
           </Box>
         </Flex>
