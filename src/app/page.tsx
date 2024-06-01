@@ -3,10 +3,12 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 import Slider from "./components/Slider"
 import Features from "./components/Feature/features"
+import Hero from "./components/Hero"
 
 export default function Home() {
   return (
-    <Flex direction="column" alignItems="center" gap={10} marginY={5}>
+    <Flex direction="column" alignItems="center" gap={10}>
+      <Hero />
       <Box as="section">
         <Flex direction="column" justify="center" alignItems="center" gap={2} mb={2}>
           <Text color="var(--chakra-colors-whatsapp-600)" fontWeight="bold">

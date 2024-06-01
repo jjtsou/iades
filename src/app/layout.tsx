@@ -45,7 +45,6 @@ const Layout = ({
     maxH="100%"
   >
     <Navbar />
-    <Hero />
     {children}
     <Footer />
   </Flex>

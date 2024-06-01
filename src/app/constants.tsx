@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid"
 import { NavItem } from "./components/Navbar/types"
 import { Properties } from "./types"
 
+export * as iadesHero from "/public/images/iades/iades_hero.jpg"
+
 import imgRoom1 from "/public/images/rooms/room1.jpg"
 import imgRoom2 from "/public/images/rooms/room2.jpg"
 import imgRoom3 from "/public/images/rooms/room3.jpg"
