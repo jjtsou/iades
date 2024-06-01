@@ -9,7 +9,7 @@ type FeatureTypes = {
   children: ReactNode[] | ReactNode
 }
 const Feature = ({ Icon, title, gutterBottom, ...rest }: FeatureTypes) => (
-  <Flex mb={0}>
+  <Flex mb={4}>
     <Flex shrink={0}>
       <Flex alignItems="center" justifyContent="center" h={12} w={12} rounded="md" bg="green.100">
         <Icon aria-hidden="true" size={20} color="var(--chakra-colors-whatsapp-600)" />
