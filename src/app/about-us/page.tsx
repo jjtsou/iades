@@ -103,19 +103,3 @@ const AboutUs = () => (
 )
 
 export default AboutUs
-
-{
-  /* <Box
-      padding={6}
-      w="80%"
-      mx="auto"
-      bg="green.50"
-      sx={{ columnCount: [1, 2, 3], columnGap: "8px" }}
-    >
-      {naxosImages.map((src, i) => (
-        <Box overflow="hidden" borderRadius="xl" mb={2}>
-          <Image key={i} src={src} alt={`Naxos image ${i}`} />
-        </Box>
-      ))}
-    </Box> */
-}
