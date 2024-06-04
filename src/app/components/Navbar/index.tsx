@@ -109,7 +109,7 @@ const Navbar = () => {
               <FaRegEnvelope size={25} title="Contact us" />
             </Link>
             <Link
-              href="tel:+302285044129"
+              href="tel:+306972441744"
               color="gray.600"
               _hover={{
                 color: "var(--chakra-colors-whatsapp-600)",

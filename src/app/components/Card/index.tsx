@@ -56,7 +56,7 @@ const Card = ({ property }: { property: Property }) => {
       </Box>
       {/* <Link href={`/blog/${post.slug}`}>{post.title}</Link> */}
       <Flex mb="6" justifyContent="center" alignItems="center">
-        <Link href="tel:+302285044129">
+        <Link href="tel:+306972441744">
           <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
             For Details Contact Us
           </Button>
