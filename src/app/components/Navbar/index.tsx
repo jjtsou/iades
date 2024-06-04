@@ -15,8 +15,10 @@ import {
 } from "@chakra-ui/react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Link } from "@chakra-ui/next-js"
+import Image from "next/image"
 import { IoIosPhonePortrait } from "react-icons/io"
 import { FaRegEnvelope } from "react-icons/fa"
+import iadesLogo from "/public/svg/iades.svg"
 import NavItems from "./navItems"
 
 const Navbar = () => {
@@ -78,7 +80,7 @@ const Navbar = () => {
               </VStack>
             </Box>
             <Link href="/" title="Iades Home Page" display="flex" alignItems="center" px="3">
-              Logo
+              <Image priority src={iadesLogo} width="75" alt="Follow us on Twitter" />
               <VisuallyHidden>Iades</VisuallyHidden>
             </Link>
 
@@ -98,7 +100,7 @@ const Navbar = () => {
             gap={2}
           >
             <Link
-              href="mailto:test@example.com"
+              href="mailto:iadesstudios@yahoo.gr"
               color="gray.600"
               _hover={{
                 color: "var(--chakra-colors-whatsapp-600)",
@@ -107,7 +109,7 @@ const Navbar = () => {
               <FaRegEnvelope size={25} title="Contact us" />
             </Link>
             <Link
-              href="tel:+123456789"
+              href="tel:+302285044129"
               color="gray.600"
               _hover={{
                 color: "var(--chakra-colors-whatsapp-600)",

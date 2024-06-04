@@ -23,9 +23,11 @@ const Card = ({ property }: { property: Property }) => {
       <Image src={property.imageUrl} alt={property.imageAlt} />
       <Box p="6">
         <Flex alignItems="baseline">
-          <Badge rounded="full" px="2" colorScheme="teal">
-            New
-          </Badge>
+          {property.new && (
+            <Badge rounded="full" px="2" colorScheme="teal">
+              New
+            </Badge>
+          )}
           <Box
             color="gray.500"
             fontWeight="semibold"
@@ -34,21 +36,13 @@ const Card = ({ property }: { property: Property }) => {
             textTransform="uppercase"
             ml="2"
           >
-            {property.beds} beds &bull; {property.baths} baths
+            {property.beds} beds &bull; {property.baths} bath
           </Box>
         </Flex>
 
         <Text mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
           {property.title}
         </Text>
-
-        <Box>
-          {property.formattedPrice}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / wk
-          </Box>
-        </Box>
-
         <Flex mt="2" alignItems="center">
           {Array(5)
             .fill("")
@@ -62,9 +56,9 @@ const Card = ({ property }: { property: Property }) => {
       </Box>
       {/* <Link href={`/blog/${post.slug}`}>{post.title}</Link> */}
       <Flex mb="6" justifyContent="center" alignItems="center">
-        <Link href="#">
+        <Link href="tel:+302285044129">
           <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
-            See Details
+            For Details Contact Us
           </Button>
         </Link>
       </Flex>
