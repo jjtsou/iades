@@ -10,6 +10,7 @@ type Property = {
   formattedPrice: string
   reviewCount: number
   rating: number
+  new: boolean
 }
 
 type Properties = Property[]
