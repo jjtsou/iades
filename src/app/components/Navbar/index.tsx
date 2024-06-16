@@ -80,7 +80,7 @@ const Navbar = () => {
               </VStack>
             </Box>
             <Link href="/" title="Iades Home Page" display="flex" alignItems="center" px="3">
-              <Image priority src={iadesLogo} width="75" alt="Follow us on Twitter" />
+              <Image src={iadesLogo} width="75" alt="Iades Logo" />
               <VisuallyHidden>Iades</VisuallyHidden>
             </Link>
 

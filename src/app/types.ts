@@ -4,6 +4,7 @@ type Property = {
   id: string
   imageUrl: StaticImageData
   imageAlt: string
+  people: number
   beds: number
   baths: number
   title: string

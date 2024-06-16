@@ -96,7 +96,7 @@ const AboutUs = () => (
         </Text>
       </Flex>
       <Box>
-        <Image src={imgNaxos} alt="Image of Naxos beach" />
+        <Image src={imgNaxos} alt="Image of Naxos beach" priority />
       </Box>
     </SimpleGrid>
   </Flex>

@@ -35,21 +35,28 @@ const Features = () => {
                 md: 10,
               }}
             >
-              <Feature title="Competitive exchange rates" Icon={FaWifi} gutterBottom>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+              <Feature title="Free Wi-Fi" Icon={FaWifi} gutterBottom>
+                Stay connected with our complimentary high-speed Wi-Fi available throughout the
+                rooms. Whether you need to catch up on work, stream your favorite shows, or stay in
+                touch with family and friends, our robust Wi-Fi network ensures you have the best
+                online experience
               </Feature>
-              <Feature title=" No hidden fees" Icon={IoBedOutline} gutterBottom>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+              <Feature title="Room Service" Icon={IoBedOutline}>
+                Enjoy the convenience of our comprehensive room service, available to all guests.
+                Relax in the comfort of your room while we take care of your needs. We ensure that
+                your room remains a sanctuary of cleanliness and comfort.
               </Feature>
-              <Feature title="Transfers are instant" Icon={FaParking} gutterBottom>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+              <Feature title="Parking Space" Icon={FaParking} gutterBottom>
+                Our rooms offer free parking space for all our guests. Whether you're traveling by
+                car or renting a vehicle during your stay, you can rest assured that parking will be
+                convenient and secure. Additionally, we offer easy access to the rooms from the
+                parking lot, ensuring a hassle-free experience.
               </Feature>
-              <Feature title="Mobile notifications" Icon={RiServiceLine}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-                perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
+              <Feature title="Exceptional Hospitality" Icon={RiServiceLine} gutterBottom>
+                Experience the warmth and charm of our exceptional greek hospitality. We are
+                dedicated to making your stay as comfortable and enjoyable as possible. From the
+                moment you check-in, you'll be greeted with a friendly smile and a willingness to
+                assist with any needs or requests you may have.
               </Feature>
             </Stack>
           </Box>
