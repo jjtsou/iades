@@ -1,9 +1,10 @@
 import { Box } from "@chakra-ui/react"
 import SlickSlider from "react-slick"
-import { properties } from "@/app/constants"
+import { properties as defaultProperties } from "@/app/constants"
 import Card from "../Card"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { Properties } from "@/app/types"
 
 const config = {
   dots: true,
@@ -33,10 +34,14 @@ const config = {
     },
   ],
 }
-const rooms = properties.map(property => <Card key={property.id} property={property} />)
-const Slider = () => (
+// const rooms = properties.map(property => <Card key={property.id} property={property} />)
+const Slider = ({ properties = defaultProperties }: { properties?: Properties }) => (
   <Box className="slider-container" w="100%" maxW="70vw" m="auto" pb="10">
-    <SlickSlider {...config}>{rooms}</SlickSlider>
+    <SlickSlider {...config}>
+      {properties.map(property => (
+        <Card key={property.id} property={property} />
+      ))}
+    </SlickSlider>
   </Box>
 )
 

@@ -4,7 +4,7 @@ import { iadesHero } from "@/app/constants"
 import { Image } from "@chakra-ui/next-js"
 
 const Hero = () => {
-  return <Image w="full" maxH="100vh" src={iadesHero} alt="Iades Hero Image" />
+  return <Image w="full" maxH="100vh" src={iadesHero} alt="Iades Hero Image" priority />
 }
 
 export default Hero

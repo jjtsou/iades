@@ -3,6 +3,7 @@ import { Flex, Badge, Box, Text, Button } from "@chakra-ui/react"
 import Image from "next/image"
 import { FaStar } from "react-icons/fa"
 import { Property } from "@/app/types"
+import { IoMdPerson } from "react-icons/io"
 
 const Card = ({ property }: { property: Property }) => {
   return (
@@ -28,7 +29,8 @@ const Card = ({ property }: { property: Property }) => {
               New
             </Badge>
           )}
-          <Box
+          <Flex
+            alignItems="center"
             color="gray.500"
             fontWeight="semibold"
             letterSpacing="wide"
@@ -36,8 +38,17 @@ const Card = ({ property }: { property: Property }) => {
             textTransform="uppercase"
             ml="2"
           >
-            {property.beds} beds &bull; {property.baths} bath
-          </Box>
+            <Text>
+              {property.beds} beds &bull; {property.baths} bath &bull;
+            </Text>
+            <Flex ml={1}>
+              {Array(property.people)
+                .fill("")
+                .map((_, i) => (
+                  <IoMdPerson key={i} />
+                ))}
+            </Flex>
+          </Flex>
         </Flex>
 
         <Text mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
