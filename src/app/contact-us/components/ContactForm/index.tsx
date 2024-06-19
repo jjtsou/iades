@@ -21,7 +21,7 @@ const ContactForm = () => {
 
   const sendEmail: FormEventHandler<HTMLDivElement> = e => {
     e.preventDefault()
-    console.log(serviceId, templateId, publicKey)
+
     emailjs
       .sendForm(serviceId!, templateId!, ref.current!, {
         publicKey,
