@@ -1,6 +1,6 @@
 import { ReactElement } from "react"
 
-export type NavItem = {
+export type NavItemType = {
   id: string
   label: string
   icon: ReactElement

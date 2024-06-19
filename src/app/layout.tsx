@@ -45,7 +45,7 @@ const Layout = ({
     alignItems="center"
     w="100%"
     maxW="100vw"
-    h="100%"
+    h="100vh"
     maxH="100%"
   >
     <Navbar />
