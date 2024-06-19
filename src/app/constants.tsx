@@ -1,7 +1,8 @@
 import { MdOutlineHotel } from "react-icons/md"
 import { IoHomeOutline, IoInformationCircleOutline } from "react-icons/io5"
+import { TiMessages } from "react-icons/ti"
 import { v4 as uuidv4 } from "uuid"
-import { NavItem } from "./components/Navbar/types"
+import { NavItemType } from "./components/Navbar/types"
 import { Properties } from "./types"
 
 export * as iadesHero from "/public/images/iades/iades_hero.jpg"
@@ -40,7 +41,7 @@ const naxosImages = [
   imgNaxos19,
 ]
 
-const nav_items: NavItem[] = [
+const nav_items: NavItemType[] = [
   {
     label: "Home",
     href: "/",
@@ -54,10 +55,16 @@ const nav_items: NavItem[] = [
     id: uuidv4(),
   },
   {
-    label: "Rooms",
-    icon: <MdOutlineHotel title="Rooms" size="20" />,
+    label: "Contact Us",
+    href: "/contact-us",
+    icon: <TiMessages title="Contact Us" size="20" />,
     id: uuidv4(),
   },
+  // {
+  //   label: "Rooms",
+  //   icon: <MdOutlineHotel title="Rooms" size="20" />,
+  //   id: uuidv4(),
+  // },
 ]
 
 const properties: Properties = [
