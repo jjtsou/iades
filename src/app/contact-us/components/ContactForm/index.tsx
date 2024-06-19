@@ -11,9 +11,9 @@ import {
 } from "@chakra-ui/react"
 import emailjs from "@emailjs/browser"
 
-const serviceId = process.env.SERVICE_ID
-const templateId = process.env.TEMPLATE_ID
-const publicKey = process.env.ERVICE_PUBLIC_KEY
+const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID
+const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID
+const publicKey = process.env.NEXT_PUBLIC_SERVICE_PUBLIC_KEY
 
 const ContactForm = () => {
   const ref = useRef()
@@ -21,7 +21,7 @@ const ContactForm = () => {
 
   const sendEmail: FormEventHandler<HTMLDivElement> = e => {
     e.preventDefault()
-    console.log(process.env.SERVICE_ID, templateId, publicKey)
+    console.log(serviceId, templateId, publicKey)
     emailjs
       .sendForm(serviceId!, templateId!, ref.current!, {
         publicKey,
