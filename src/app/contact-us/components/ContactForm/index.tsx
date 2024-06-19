@@ -21,20 +21,22 @@ const ContactForm = () => {
 
   const sendEmail: FormEventHandler<HTMLDivElement> = e => {
     e.preventDefault()
-
+    console.log(serviceId, templateId, publicKey)
     emailjs
       .sendForm(serviceId!, templateId!, ref.current!, {
         publicKey,
       })
       .then(
         () => toast({ status: "success", description: "The message has been sent" }),
-        () =>
+        error => {
+          console.log({ error })
           toast({
             status: "error",
             title: "Error",
             description:
               "The message has not been sent. Please try again or contact the owners directly via phone",
           })
+        }
       )
   }
   return (
