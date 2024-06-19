@@ -23,10 +23,15 @@ const ContactOptions = () => (
             {label}
           </Text>
           <Box>
-            {values.map(value => (
-              <Text key={value} fontSize="md" textAlign="center">
-                {value}
-              </Text>
+            {values.map(({ label, Icon }) => (
+              <Flex key={label} gap={1} alignItems="center">
+                <Text fontSize="md" textAlign="center">
+                  {label}
+                </Text>
+                {Icon ? (
+                  <Icon aria-hidden="true" size={20} color="var(--chakra-colors-whatsapp-600)" />
+                ) : null}
+              </Flex>
             ))}
           </Box>
         </Stack>
