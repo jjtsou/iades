@@ -1,11 +1,15 @@
 import { Link } from "@chakra-ui/next-js"
-import { Flex, Badge, Box, Text, Button } from "@chakra-ui/react"
+import { Flex, Box, Text, Button } from "@chakra-ui/react"
 import Image from "next/image"
-import { FaStar } from "react-icons/fa"
 import { Property } from "@/app/types"
 import { IoMdPerson } from "react-icons/io"
+import { TbMeterSquare } from "react-icons/tb"
 
-const Card = ({ property }: { property: Property }) => {
+const Card = ({
+  property: { title, people, beds, imageUrl, imageAlt, sqmt },
+}: {
+  property: Property
+}) => {
   return (
     <Flex
       direction="column"
@@ -21,49 +25,39 @@ const Card = ({ property }: { property: Property }) => {
         xl: 12,
       }}
     >
-      <Image src={property.imageUrl} alt={property.imageAlt} />
+      <Image src={imageUrl} alt={imageAlt} />
       <Box p="6">
         <Flex alignItems="baseline">
-          {property.new && (
-            <Badge rounded="full" px="2" colorScheme="teal">
-              New
-            </Badge>
-          )}
           <Flex
             alignItems="center"
             color="gray.500"
             fontWeight="semibold"
             letterSpacing="wide"
             fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
+            gap={1}
           >
-            <Text>
-              {property.beds} beds &bull; {property.baths} bath &bull;
-            </Text>
-            <Flex ml={1}>
-              {Array(property.people)
+            <Flex alignItems="center">
+              <Text>{sqmt}</Text>
+              <TbMeterSquare size={20} />
+            </Flex>
+            <Text> &bull;</Text>
+            <Flex>
+              {Array(people)
                 .fill("")
                 .map((_, i) => (
                   <IoMdPerson key={i} />
                 ))}
             </Flex>
+            <Text> &bull;</Text>
+            <Text textTransform="uppercase">
+              {beds} bed{beds > 1 ? "s" : ""}
+            </Text>
           </Flex>
         </Flex>
 
-        <Text mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
-          {property.title}
+        <Text mt="1" fontWeight="semibold" as="h4">
+          {title}
         </Text>
-        <Flex mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <FaStar key={i} color={i < property.rating ? "teal.500" : "gray.300"} />
-            ))}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
-          </Box>
-        </Flex>
       </Box>
       {/* <Link href={`/blog/${post.slug}`}>{post.title}</Link> */}
       <Flex mb="6" justifyContent="center" alignItems="center">

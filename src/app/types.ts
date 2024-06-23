@@ -6,12 +6,8 @@ type Property = {
   imageAlt: string
   people: number
   beds: number
-  baths: number
   title: string
-  formattedPrice: string
-  reviewCount: number
-  rating: number
-  new: boolean
+  sqmt: number
 }
 
 type Properties = Property[]

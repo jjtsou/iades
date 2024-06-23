@@ -76,7 +76,7 @@ const Navbar = () => {
                   justifySelf="self-start"
                   onClick={mobileNav.onClose}
                 />
-                <NavItems />
+                <NavItems onClick={mobileNav.onClose} />
               </VStack>
             </Box>
             <Link href="/" title="Iades Home Page" display="flex" alignItems="center" px="3">
