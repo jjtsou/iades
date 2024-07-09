@@ -6,8 +6,10 @@ import { IoMdPerson } from "react-icons/io"
 import { TbMeterSquare } from "react-icons/tb"
 
 const Card = ({
+  id,
   property: { title, people, beds, imageUrl, imageAlt, sqmt },
 }: {
+  id: string
   property: Property
 }) => {
   return (
@@ -61,7 +63,7 @@ const Card = ({
       </Box>
       {/* <Link href={`/blog/${post.slug}`}>{post.title}</Link> */}
       <Flex mb="6" justifyContent="center" alignItems="center">
-        <Link href="tel:+306972441744">
+        <Link href={`/rooms/${id}`}>
           <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
             For Details Contact Us
           </Button>

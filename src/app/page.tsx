@@ -1,7 +1,7 @@
 "use client"
 
 import { Box, Flex, Heading, Text } from "@chakra-ui/react"
-import Slider from "./components/Slider"
+import { RoomsSlider } from "./components/Slider"
 import Features from "./components/Feature/features"
 import Hero from "./components/Hero"
 
@@ -20,7 +20,7 @@ export default function Home() {
             every detail is meticulously crafted for your indulgence.
           </Text>
         </Flex>
-        <Slider />
+        <RoomsSlider />
       </Box>
       <Box as="section">
         <Flex direction="column" justify="center" alignItems="center" gap={2} mb={8}>
