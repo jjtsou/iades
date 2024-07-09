@@ -65,7 +65,7 @@ const Card = ({
       <Flex mb="6" justifyContent="center" alignItems="center">
         <Link href={`/rooms/${id}`}>
           <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
-            For Details Contact Us
+            Details
           </Button>
         </Link>
       </Flex>
