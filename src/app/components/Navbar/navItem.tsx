@@ -3,12 +3,13 @@ import { useColorModeValue, Button, Text } from "@chakra-ui/react"
 import { NavItemType } from "./types"
 import { Link } from "@chakra-ui/next-js"
 
-const NavItem = ({ label, href, icon, onClick }: Omit<NavItemType, "id">) => {
+const NavItem = ({ label, href, icon, isExternal, onClick }: Omit<NavItemType, "id">) => {
   const linkColor = useColorModeValue("gray.600", "gray.200")
   const linkHoverColor = useColorModeValue("var(--chakra-colors-whatsapp-600)", "white")
   return (
     <Button
       as={Link}
+      isExternal={isExternal}
       href={href ?? "#"}
       variant="ghost"
       w="full"
