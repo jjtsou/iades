@@ -4,6 +4,7 @@ import {
   MdOutlineCoffeeMaker,
   MdOutlineWifi,
 } from "react-icons/md"
+import { Icon } from "@chakra-ui/react"
 import { IoHomeOutline, IoInformationCircleOutline } from "react-icons/io5"
 import { FaShower, FaTv, FaKitchenSet } from "react-icons/fa6"
 import { TbAirConditioning } from "react-icons/tb"
@@ -160,6 +161,40 @@ import imgRoom4 from "/public/images/rooms/general/room4.jpg"
 import imgRoom5 from "/public/images/rooms/general/room5.jpg"
 import imgRoom6 from "/public/images/rooms/general/room6.jpg"
 
+const unlimitedAdrenalineUrl =
+  "https://app.unlimited-adrenaline.gr/aff/en/810-cAitddtucR?ignoreWebKitOutliers=1738690572"
+const UnlimitedAdrenaline = () => (
+  <svg viewBox="0 -20 90 150" width={30} height={30}>
+    <g>
+      <path
+        fill="#db0b29"
+        d="M43.8,15.1h2.9l0.8-0.6l1.6,2l0.8-1.4h5.2l1.7,0.7l1.1-1l-0.5-1.1l1.3-1.3l1.2,1.3l1.5-0.3l0.4,1.7h1.6
+		       l3.1,5.5l0.2,2.3l1.2,1.7L71,26l0,2.5l6.4,11.2l2,2.1l2-0.8l1.7,0.3L81.3,44l-0.2,2.3l5.3,9.4l1.2,0.2l1.8,1.6l-2,1.6l1.6,1.4
+		       l3.3,5.9l1.8,0.4l-0.6,1.7l1.3,2.3c2.9-6.3,4.5-13.3,4.5-20.7c0-1.7-0.1-3.4-0.2-5l-1.6-1.4l-0.9,0.7l-1.5-1.1l0.2-1.6l2.6-0.7
+		       L97.9,40l0.2-1.6c-1.3-5.2-3.3-10.1-6.1-14.6l-1.2,0.3l-0.9-1.3l-1.9-0.5l0.6-1.5l1.4-0.8l-1.4-1.4l-1.4,0.4l-1-1.4l0.1-1.3
+		       c-2.8-3.1-6.1-5.8-9.6-8.1l-1.1-1.4L75,6.9l-1.3,2.3l-2.4,0.4l1-2.2l-0.4-1.7C65.3,2.3,57.9,0.5,50,0.5c-4.6,0-9.1,0.6-13.3,1.8
+		       l-1.3,2.6l-3.8,1.1l1,3l-0.2,1.2L29,9.5l-1-2.8l-2.4,0.2c-3.5,2-6.8,4.4-9.7,7.2l-0.8,0.1L14.9,15l0.9,1l-0.4,1l0.2,1.2l-0.8,1.4
+		       l-0.3,0L14,17.7l-1.5-1.3l-0.6,0l0.6,1.9L12,19.2l-1,0.3c-3.7,4.8-6.6,10.2-8.4,16.2L3,37l-0.4,1.2L5,39.3l-0.2,0.3l-1.7,0.7
+		       L1,39.8l-0.3,0.4l1,1.3l0.1,2.1l-1,1.1c-0.2,1.7-0.3,3.5-0.3,5.3c0,6.4,1.2,12.5,3.4,18.1l1.4-1.9l0.5-2.8l-0.2-1l-0.2-2l2.3-0.3
+		       L8,61.9l2.6,1.2l0.7-0.5l-2.2-2.9l1.5-0.5l7.7-10.3l-0.9-0.6l0.5-2.6l1.6-0.2l1-1.2l0.8,0.8l8-10.7l1.8-0.2l1.7-2.1l-2.7-2.1
+		       l1.1-0.7l1.6,0.5l6.7-8.9L38,19.4l0.3-1.1l1.1,0.6l1.8-0.4L43.8,15.1z"
+      ></path>
+
+      <path
+        fill="#db0b29"
+        d="M45.4,62.6l7.3,0.5l0.4-1l1.1,0.1l0.3,1.5l1.2-0.4l5.9,0.4l1.1-0.7l1.1,2.5l1.2-0.7l0.6-0.8l4.9,0.3l-1.8-3
+		       l0.1-2L66.4,60l0.1-1.8l-5.6-9.3l-2.5-1.4l-1.2-2.4l-1.5-0.2l-1.6-3.6l0.9-2.2l-2.2-3.6l-1.3,0l-1.5,1l0.1,2.4l-1.8,2.2l1.6,0.9
+		       l0.8,1.1l-1.4,0.9l-1.3,0l-1.3,1l-1.4,2.6L42,48.9L33.8,59l0.6,2.1l-2.2,1.5l-0.6,1.1l-1.2-0.5L26,68.7l-1.7-0.5l-1,2l0.1,1.7
+		       L19,77.3l-0.4,1.6l1.9,0.2l-0.2,2l-2.1,0.6l-1-0.7l-1.6,0.5l-1.8,2.2c3.2,3.5,6.9,6.5,11,8.9l0.3,1.8l1,0.7l0.6-0.3l0.4-1.8
+		       l1.1-1.1l0.7-0.1l0.4,2.4l0.7,0.4l-0.1,0.7c2,0.9,4.2,1.7,6.3,2.3l0.5,1l1.3-0.7l-0.5-2.7l0.6-0.4l1.2,2.2l-0.3,1.9l1.5,0.1l0.2-1
+		       l0.8,0.3l0.4,0.6c2.6,0.4,5.3,0.7,8,0.7c2.7,0,5.3-0.2,7.9-0.6l1.1,0.3l0.4-0.2L59,97.2l-1.3-2.3l0.6-0.3l2.3,0.7l0.4,1.8l1.3,0.8
+		       c4.2-1.1,8.1-2.6,11.8-4.7l0.2-1.5l1-1.3l1.9,0.9c3.4-2.2,6.4-4.8,9.2-7.7l-5.9-3.1l-0.2-1.3L78,80l-2.3-0.3l-1.9,0.3l-0.6,0.8
+		       l-3-0.6l-0.2-0.6l1.8-0.9l0.6-2.4l-14.1-7.3l-0.7,1.1l-2.8-0.2v-1.2l-1.6-0.7L52,66L45.4,62.6z"
+      ></path>
+    </g>
+  </svg>
+)
+
 const nav_items: NavItemType[] = [
   {
     label: "Home",
@@ -168,16 +203,22 @@ const nav_items: NavItemType[] = [
     id: uuidv4(),
   },
   {
-    label: "About Us",
+    label: "About us",
     href: "/about-us",
-    icon: <IoInformationCircleOutline title="About Us" size="20" />,
+    icon: <IoInformationCircleOutline title="About us" size="20" />,
     id: uuidv4(),
   },
   {
-    label: "Contact Us",
+    label: "Contact us",
     href: "/contact-us",
-    icon: <TiMessages title="Contact Us" size="20" />,
+    icon: <TiMessages title="Contact us" size="20" />,
     id: uuidv4(),
+  },
+  {
+    label: "Things to do",
+    icon: <UnlimitedAdrenaline />,
+    id: uuidv4(),
+    onClick: () => window.open(unlimitedAdrenalineUrl, "_blank"),
   },
   // {
   //   label: "Rooms",
