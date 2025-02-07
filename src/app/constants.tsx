@@ -216,9 +216,10 @@ const nav_items: NavItemType[] = [
   },
   {
     label: "Things to do",
+    href: unlimitedAdrenalineUrl,
+    isExternal: true,
     icon: <UnlimitedAdrenaline />,
     id: uuidv4(),
-    onClick: () => window.open(unlimitedAdrenalineUrl, "_blank"),
   },
   // {
   //   label: "Rooms",
