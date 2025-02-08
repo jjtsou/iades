@@ -4,7 +4,6 @@ import {
   MdOutlineCoffeeMaker,
   MdOutlineWifi,
 } from "react-icons/md"
-import { Icon } from "@chakra-ui/react"
 import { IoHomeOutline, IoInformationCircleOutline } from "react-icons/io5"
 import { FaShower, FaTv, FaKitchenSet } from "react-icons/fa6"
 import { TbAirConditioning } from "react-icons/tb"
@@ -215,17 +214,18 @@ const nav_items: NavItemType[] = [
     id: uuidv4(),
   },
   {
+    label: "Rooms",
+    href: "/rooms",
+    icon: <MdOutlineHotel title="Rooms" size="20" />,
+    id: uuidv4(),
+  },
+  {
     label: "Things to do",
     href: unlimitedAdrenalineUrl,
     isExternal: true,
     icon: <UnlimitedAdrenaline />,
     id: uuidv4(),
   },
-  // {
-  //   label: "Rooms",
-  //   icon: <MdOutlineHotel title="Rooms" size="20" />,
-  //   id: uuidv4(),
-  // },
 ]
 
 const properties: Properties = {
