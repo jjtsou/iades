@@ -7,7 +7,7 @@ import { TbMeterSquare } from "react-icons/tb"
 
 const Card = ({
   id,
-  property: { title, people, beds, imageUrl, imageAlt, sqmt },
+  property: { title, people, beds, sofas, imageUrl, imageAlt, sqmt },
 }: {
   id: string
   property: Property
@@ -33,7 +33,7 @@ const Card = ({
       }}
     >
       <Image src={imageUrl} alt={imageAlt} />
-      <Box p="6">
+      <Box px="2" py="6">
         <Flex alignItems="baseline">
           <Flex
             alignItems="center"
@@ -59,6 +59,14 @@ const Card = ({
             <Text textTransform="uppercase">
               {beds} bed{beds > 1 ? "s" : ""}
             </Text>
+            {sofas ? (
+              <>
+                <Text> &bull;</Text>
+                <Text textTransform="uppercase">
+                  {sofas} sofa bed{sofas > 1 ? "s" : ""}
+                </Text>
+              </>
+            ) : null}
           </Flex>
         </Flex>
 

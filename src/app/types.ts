@@ -7,6 +7,7 @@ type Property = {
   roomImages: StaticImageData[]
   people: number
   beds: number
+  sofas: number
   title: string
   description: string
   sqmt: number

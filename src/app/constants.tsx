@@ -235,6 +235,7 @@ const properties: Properties = {
     roomImages: DEL_STUDIO_SEA_VIEW_PHOTOS,
     people: 2,
     beds: 1,
+    sofas: 0,
     title: "Deluxe studio with sea view",
     description:
       "Self-catered studio with private bathroom with shower and balcony with table and chairs.",
@@ -270,6 +271,7 @@ const properties: Properties = {
     roomImages: DEL_STUDIO_PHOTOS,
     people: 2,
     beds: 1,
+    sofas: 0,
     title: "Deluxe studio",
     description:
       "This air-conditioned studio features a private bathroom, a private entrance, a tea and coffee maker as well as a balcony. The unit offers 1 bed.",
@@ -305,6 +307,7 @@ const properties: Properties = {
     roomImages: APARTMENT_SEA_VIEW_PHOTOS,
     people: 3,
     beds: 2,
+    sofas: 1,
     title: "Apartment with sea view",
     description:
       "Featuring a private entrance, this air-conditioned apartment comprises one living room, one separate bedroom and one bathroom with a shower. This apartment features a tea and coffee maker, a wardrobe, a flat-screen TV and a balcony. The unit offers one bed and one sofa bed.",
@@ -341,6 +344,7 @@ const properties: Properties = {
     roomImages: STUDIO_TWO_ADULTS_PHOTOS,
     people: 2,
     beds: 1,
+    sofas: 0,
     title: "Studio (2 Adults)",
     description:
       "Self-catered studio with private bathroom with shower and balcony with table and chairs.",
@@ -376,7 +380,8 @@ const properties: Properties = {
     imageAlt: "Rear view of studio",
     roomImages: FAMILY_ROOM_PHOTOS,
     people: 3,
-    beds: 2,
+    beds: 1,
+    sofas: 1,
     title: "Family room",
     description:
       "Self-catered family room with private bathroom with shower and balcony with table and chairs. Please note that this room is located on the semi-basement floor. Please note that this room can accommodate either 4 adults or 2adults and 2 children.",
@@ -414,6 +419,7 @@ const properties: Properties = {
     roomImages: DEL_DOUBLE_ROOM_PHOTOS,
     people: 2,
     beds: 1,
+    sofas: 0,
     title: "Deluxe double room",
     description:
       "This air-conditioned double room has a private bathroom, a private entrance, a tea and coffee maker as well as a balcony. The unit has 1 bed.",
@@ -448,6 +454,7 @@ const properties: Properties = {
     roomImages: TWO_BEDROOM_APARTMENT_PHOTOS,
     people: 4,
     beds: 2,
+    sofas: 0,
     title: "Two-Bedroom Apartment",
     description:
       "Self-catered family room with 2 private bathroom with shower and 2 balconies with table and chairs.",
