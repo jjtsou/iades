@@ -307,7 +307,7 @@ const properties: Properties = {
     beds: 2,
     title: "Apartment with sea view",
     description:
-      "Featuring a private entrance, this air-conditioned apartment comprises one living room, one separate bedroom and one bathroom with a shower. This apartment features a tea and coffee maker, a wardrobe, a flat-screen TV and a balcony. The unit offers two beds.",
+      "Featuring a private entrance, this air-conditioned apartment comprises one living room, one separate bedroom and one bathroom with a shower. This apartment features a tea and coffee maker, a wardrobe, a flat-screen TV and a balcony. The unit offers one bed and one sofa bed.",
     sqmt: 35,
     details: [
       { name: "Balcony", icon: MdOutlineBalcony },
@@ -340,7 +340,7 @@ const properties: Properties = {
     imageAlt: "Rear view of modern studio with balcony view",
     roomImages: STUDIO_TWO_ADULTS_PHOTOS,
     people: 2,
-    beds: 2,
+    beds: 1,
     title: "Studio (2 Adults)",
     description:
       "Self-catered studio with private bathroom with shower and balcony with table and chairs.",
@@ -447,10 +447,10 @@ const properties: Properties = {
     imageAlt: "Rear view of modern studio with balcony view",
     roomImages: TWO_BEDROOM_APARTMENT_PHOTOS,
     people: 4,
-    beds: 3,
+    beds: 2,
     title: "Two-Bedroom Apartment",
     description:
-      "Self-catered family room with private bathroom with shower and 2 balconies with table and chairs.",
+      "Self-catered family room with 2 private bathroom with shower and 2 balconies with table and chairs.",
     sqmt: 45,
     details: [
       { name: "Balcony", icon: MdOutlineBalcony },
