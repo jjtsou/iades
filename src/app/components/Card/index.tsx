@@ -26,6 +26,11 @@ const Card = ({
         lg: 10,
         xl: 12,
       }}
+      transition="all 0.2s ease"
+      _hover={{
+        transform: "translateY(-4px)",
+        shadow: "xl",
+      }}
     >
       <Image src={imageUrl} alt={imageAlt} />
       <Box p="6">
