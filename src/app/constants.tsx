@@ -8,6 +8,7 @@ import { IoHomeOutline, IoInformationCircleOutline } from "react-icons/io5"
 import { FaShower, FaTv, FaKitchenSet } from "react-icons/fa6"
 import { TbAirConditioning } from "react-icons/tb"
 import { PiMountains } from "react-icons/pi"
+import { RiGalleryLine } from "react-icons/ri"
 import { TiMessages } from "react-icons/ti"
 import { v4 as uuidv4 } from "uuid"
 import { NavItemType } from "./components/Navbar/types"
@@ -125,32 +126,79 @@ const TWO_BEDROOM_APARTMENT_PHOTOS = [
   two_bedroom_apartment_photo_5,
 ]
 
-import imgNaxos1 from "/public/images/naxos/naxos1.jpg"
-import imgNaxos2 from "/public/images/naxos/naxos2.jpg"
-import imgNaxos5 from "/public/images/naxos/naxos5.jpg"
-import imgNaxos6 from "/public/images/naxos/naxos6.jpg"
-import imgNaxos7 from "/public/images/naxos/naxos7.jpg"
-import imgNaxos8 from "/public/images/naxos/naxos8.jpg"
-import imgNaxos11 from "/public/images/naxos/naxos11.jpg"
-import imgNaxos13 from "/public/images/naxos/naxos13.jpg"
-import imgNaxos14 from "/public/images/naxos/naxos14.jpg"
-import imgNaxos15 from "/public/images/naxos/naxos15.jpg"
-import imgNaxos18 from "/public/images/naxos/naxos18.jpg"
-import imgNaxos19 from "/public/images/naxos/naxos19.jpg"
+import iades1 from "/public/images/iades/9Q6A5523.jpg"
+import iades2 from "/public/images/iades/9Q6A5529.jpg"
+import iades3 from "/public/images/iades/9Q6A5533.jpg"
+import iades4 from "/public/images/iades/9Q6A8549.jpeg"
+import iades5 from "/public/images/iades/9Q6A8602.jpeg"
+import iades6 from "/public/images/iades/9Q6A8653.jpeg"
+import iades7 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 2 3.jpeg"
+import iades8 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 2 15.jpeg"
+import iades9 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 2 18.jpeg"
+import iades10 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 2 31.jpeg"
+import iades11 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 Room B 6.jpeg"
+import iades12 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 Room B 15.jpeg"
+import iades13 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 Room B 21.jpeg"
+import iades14 from "/public/images/iades/ABOVE - ABOVE - Iades 2021 Room B 34.jpeg"
+import iades15 from "/public/images/iades/ABOVE - IADES 2022 1-5.jpeg"
+import iades16 from "/public/images/iades/ABOVE - IADES 2022 1-6.jpeg"
+import iades17 from "/public/images/iades/ABOVE - IADES 2022 1-19.jpeg"
+import iades18 from "/public/images/iades/ABOVE - IADES 2022 1-21.jpeg"
+import iades19 from "/public/images/iades/ABOVE - IADES 2022 1-25.jpeg"
+import iades20 from "/public/images/iades/ABOVE - IADES 2023-7.jpeg"
+import iades21 from "/public/images/iades/ABOVE - IADES 2023-21.jpeg"
+import iades22 from "/public/images/iades/ABOVE - IADES 2023-32.jpeg"
+import iades23 from "/public/images/iades/ABOVE - IADES 2023-52.jpeg"
+import iades24 from "/public/images/iades/ABOVE - IADES 2023-73.jpeg"
+import iades25 from "/public/images/iades/ABOVE - IADES 2023-79.jpeg"
+import iades26 from "/public/images/iades/ABOVE - IADES 2023-83.jpeg"
+import iades27 from "/public/images/iades/ABOVE - IADES 2023-88.jpeg"
+import iades28 from "/public/images/iades/above - iades 2023.jpeg"
+import iades29 from "/public/images/iades/ABOVE - Iades Studios-11.jpeg"
+import iades30 from "/public/images/iades/ABOVE - Iades Studios-14.jpeg"
+import iades31 from "/public/images/iades/ABOVE - Iades Studios-18.jpeg"
+import iades32 from "/public/images/iades/ABOVE - IADES-1.jpeg"
+import iades33 from "/public/images/iades/ABOVE - IADES-7.jpeg"
+import iades34 from "/public/images/iades/ABOVE - IADES-10.jpeg"
+import iades35 from "/public/images/iades/ABOVE - IADES-18.jpeg"
 
-const naxosImages = [
-  imgNaxos1,
-  imgNaxos2,
-  imgNaxos5,
-  imgNaxos6,
-  imgNaxos7,
-  imgNaxos8,
-  imgNaxos11,
-  imgNaxos13,
-  imgNaxos14,
-  imgNaxos15,
-  imgNaxos18,
-  imgNaxos19,
+const galleryImages = [
+  iades1,
+  iades2,
+  iades3,
+  iades4,
+  iades5,
+  iades6,
+  iades7,
+  iades8,
+  iades9,
+  iades10,
+  iades11,
+  iades12,
+  iades13,
+  iades14,
+  iades15,
+  iades16,
+  iades17,
+  iades18,
+  iades19,
+  iades20,
+  iades21,
+  iades22,
+  iades23,
+  iades24,
+  iades25,
+  iades26,
+  iades27,
+  iades28,
+  iades29,
+  iades30,
+  iades30,
+  iades31,
+  iades32,
+  iades33,
+  iades34,
+  iades35,
 ]
 
 import imgRoom1 from "/public/images/rooms/general/room1.jpg"
@@ -202,6 +250,18 @@ const nav_items: NavItemType[] = [
     id: uuidv4(),
   },
   {
+    label: "Rooms",
+    href: "/rooms",
+    icon: <MdOutlineHotel title="Rooms" size="20" />,
+    id: uuidv4(),
+  },
+  {
+    label: "Gallery",
+    href: "/gallery",
+    icon: <RiGalleryLine title="Gallery" size="20" />,
+    id: uuidv4(),
+  },
+  {
     label: "About us",
     href: "/about-us",
     icon: <IoInformationCircleOutline title="About us" size="20" />,
@@ -211,12 +271,6 @@ const nav_items: NavItemType[] = [
     label: "Contact us",
     href: "/contact-us",
     icon: <TiMessages title="Contact us" size="20" />,
-    id: uuidv4(),
-  },
-  {
-    label: "Rooms",
-    href: "/rooms",
-    icon: <MdOutlineHotel title="Rooms" size="20" />,
     id: uuidv4(),
   },
   {
@@ -486,4 +540,4 @@ const properties: Properties = {
   },
 }
 
-export { nav_items, properties, naxosImages }
+export { nav_items, properties, galleryImages }
