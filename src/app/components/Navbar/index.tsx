@@ -18,7 +18,7 @@ import { Link } from "@chakra-ui/next-js"
 import Image from "next/image"
 import { IoIosPhonePortrait } from "react-icons/io"
 import { FaRegEnvelope } from "react-icons/fa"
-import iadesLogo from "/public/svg/iades.svg"
+import iadesLogo from "/public/images/iades/iades_logo.png"
 import NavItems from "./navItems"
 
 const Navbar = () => {
@@ -80,7 +80,7 @@ const Navbar = () => {
               </VStack>
             </Box>
             <Link href="/" title="Iades Home Page" display="flex" alignItems="center" px="3">
-              <Image src={iadesLogo} width="75" alt="Iades Logo" />
+              <Image src={iadesLogo} width="85" alt="Iades Logo" />
               <VisuallyHidden>Iades</VisuallyHidden>
             </Link>
 
