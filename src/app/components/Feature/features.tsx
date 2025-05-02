@@ -2,6 +2,7 @@ import { Flex, Stack, Box } from "@chakra-ui/react"
 import { FaWifi, FaParking } from "react-icons/fa"
 import { IoBedOutline } from "react-icons/io5"
 import { RiServiceLine } from "react-icons/ri"
+import { MdOutlineFreeBreakfast } from "react-icons/md"
 import Feature from "../Feature"
 
 const Features = () => {
@@ -41,6 +42,11 @@ const Features = () => {
                 touch with family and friends, our robust Wi-Fi network ensures you have the best
                 online experience
               </Feature>
+              <Feature title="Breakfast" Icon={MdOutlineFreeBreakfast} gutterBottom>
+                Start your day right with our delicious breakfast offerings, available every morning
+                for an additional charge. Choose from a variety of fresh, locally-sourced options to
+                suit every taste, whether you prefer a hearty meal or a light bite.
+              </Feature>
               <Feature title="Room Service" Icon={IoBedOutline}>
                 Enjoy the convenience of our comprehensive room service, available to all guests.
                 Relax in the comfort of your room while we take care of your needs. We ensure that
@@ -52,12 +58,14 @@ const Features = () => {
                 convenient and secure. Additionally, we offer easy access to the rooms from the
                 parking lot, ensuring a hassle-free experience.
               </Feature>
-              <Feature title="Exceptional Hospitality" Icon={RiServiceLine} gutterBottom>
-                Experience the warmth and charm of our exceptional greek hospitality. We are
-                dedicated to making your stay as comfortable and enjoyable as possible. From the
-                moment you check-in, you'll be greeted with a friendly smile and a willingness to
-                assist with any needs or requests you may have.
-              </Feature>
+              <Box gridColumn={{ md: "1 / span 2" }}>
+                <Feature title="Exceptional Hospitality" Icon={RiServiceLine} gutterBottom>
+                  Experience the warmth and charm of our exceptional greek hospitality. We are
+                  dedicated to making your stay as comfortable and enjoyable as possible. From the
+                  moment you check-in, you'll be greeted with a friendly smile and a willingness to
+                  assist with any needs or requests you may have.
+                </Feature>
+              </Box>
             </Stack>
           </Box>
         </Box>
