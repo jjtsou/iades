@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 import { ReactNode } from "react"
 import { Flex } from "@chakra-ui/react"
 import Footer from "./components/Footer"
-import Hero from "./components/Hero"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -48,6 +48,7 @@ const Layout = ({
     h="100vh"
     maxH="100%"
   >
+    <Analytics/>
     <Navbar />
     {children}
     <Footer />
