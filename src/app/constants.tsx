@@ -477,7 +477,7 @@ const properties: Properties = {
     title: "Deluxe double room",
     description:
       "This air-conditioned double room has a private bathroom, a private entrance, a tea and coffee maker as well as a balcony. The unit has 1 bed.",
-    sqmt: 30,
+    sqmt: 18,
     details: [
       { name: "Balcony", icon: MdOutlineBalcony },
       { name: "View", icon: PiMountains },
