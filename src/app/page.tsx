@@ -15,7 +15,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Luxury Room Collection"
             title="Rooms & Suites"
-            description="Discover the allure of our exquisite Rooms & Suites, where luxury meets comfort and every detail is meticulously crafted for your indulgence."
+            description="Discover the allure of our exquisite Rooms & Suites, where luxury meets comfort and every detail is crafted for your indulgence."
           />
         </Flex>
         <RoomsSlider />

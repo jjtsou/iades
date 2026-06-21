@@ -41,7 +41,7 @@ export default function RoomsPage() {
         <SectionHeader
           eyebrow="Luxury Accommodations"
           title="Discover Your Perfect Stay"
-          description="Each of our rooms and suites is meticulously designed to offer unparalleled comfort and style. Explore our collection to find the perfect space for your stay."
+          description="Each of our rooms and suites is designed to offer unparalleled comfort and style. Explore our collection to find the perfect space for your stay."
         />
       </Flex>
 
