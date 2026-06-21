@@ -1,9 +1,25 @@
 "use client"
 
-import { Box, Flex, Grid, GridItem, Heading, Text, Select, Stack, HStack } from "@chakra-ui/react"
+import { Container, Flex, Grid, GridItem, Stack, Text } from "@chakra-ui/react"
 import { useState } from "react"
 import Card from "../components/Card"
 import { properties } from "../constants"
+import SectionHeader from "../components/SectionHeader"
+import FilterMenu from "./components/FilterMenu"
+
+const roomTypeOptions = [
+  { value: "all", label: "All Room Types" },
+  { value: "studio", label: "Studio" },
+  { value: "apartment", label: "Apartment" },
+  { value: "family", label: "Family Room" },
+]
+
+const capacityOptions = [
+  { value: "all", label: "All Capacities" },
+  { value: "2", label: "2 Guests" },
+  { value: "3", label: "3 Guests" },
+  { value: "4", label: "4 Guests" },
+]
 
 export default function RoomsPage() {
   const [filters, setFilters] = useState({
@@ -20,49 +36,35 @@ export default function RoomsPage() {
   })
 
   return (
-    <Box w="full" maxW="container.xl" py={10} px={{ base: 4, md: 8 }}>
-      <Flex direction="column" align="center" mb={12}>
-        <Text color="whatsapp.600" fontWeight="bold" fontSize="lg">
-          Luxury Accommodations
-        </Text>
-        <Heading color="gray.700" fontSize={{ base: "3xl", md: "4xl" }} mb={4} textAlign="center">
-          Discover Your Perfect Stay
-        </Heading>
-        <Text color="gray.600" maxW="2xl" textAlign="center" fontSize={{ base: "md", md: "lg" }}>
-          Each of our rooms and suites is meticulously designed to offer unparalleled comfort and
-          style. Explore our collection to find the perfect space for your stay.
-        </Text>
+    <Container maxW="container.xl" py={{ base: 8, md: 12 }} px={{ base: 4, md: 8 }}>
+      <Flex direction="column" align="center" mb={10}>
+        <SectionHeader
+          eyebrow="Luxury Accommodations"
+          title="Discover Your Perfect Stay"
+          description="Each of our rooms and suites is designed to offer unparalleled comfort and style. Explore our collection to find the perfect space for your stay."
+        />
       </Flex>
+
       <Stack
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "column", sm: "row" }}
         spacing={4}
+        w="full"
+        maxW={{ base: "100%", sm: "480px" }}
+        mx="auto"
         mb={8}
-        justify="space-between"
-        align="center"
       >
-        <HStack spacing={4}>
-          <Select
-            value={filters.roomType}
-            onChange={e => setFilters({ ...filters, roomType: e.target.value })}
-            maxW="200px"
-          >
-            <option value="all">All Room Types</option>
-            <option value="studio">Studio</option>
-            <option value="apartment">Apartment</option>
-            <option value="family">Family Room</option>
-          </Select>
-          <Select
-            value={filters.capacity}
-            onChange={e => setFilters({ ...filters, capacity: e.target.value })}
-            maxW="200px"
-          >
-            <option value="all">All Capacities</option>
-            <option value="2">2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-          </Select>
-        </HStack>
+        <FilterMenu
+          value={filters.roomType}
+          options={roomTypeOptions}
+          onChange={roomType => setFilters({ ...filters, roomType })}
+        />
+        <FilterMenu
+          value={filters.capacity}
+          options={capacityOptions}
+          onChange={capacity => setFilters({ ...filters, capacity })}
+        />
       </Stack>
+
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
@@ -71,7 +73,6 @@ export default function RoomsPage() {
           xl: "repeat(3, 1fr)",
         }}
         gap={{ base: 6, md: 8 }}
-        px={{ base: 2, md: 4 }}
       >
         {filteredRooms.map(propertyId => (
           <GridItem key={propertyId} w="100%">
@@ -86,6 +87,6 @@ export default function RoomsPage() {
           </Text>
         </Flex>
       )}
-    </Box>
+    </Container>
   )
 }

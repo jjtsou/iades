@@ -1,59 +1,55 @@
 "use client"
 
 import { Link } from "@chakra-ui/next-js"
-import { Flex, Box, Text } from "@chakra-ui/react"
+import { Flex, Box, Text, Divider } from "@chakra-ui/react"
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa"
 import { IoLogoYoutube } from "react-icons/io"
 
 const Footer = () => (
-  <Flex w="full" bg="green.50" p={10} alignItems="center" justifyContent="center">
+  <Box w="full" bg="green.50" borderTop="1px" borderColor="green.100">
     <Flex
       w="full"
+      maxW="7xl"
+      mx="auto"
       as="footer"
-      flexDir={{
-        base: "column",
-        sm: "row",
-      }}
+      flexDir={{ base: "column", md: "row" }}
       align="center"
       justify="space-between"
-      px="6"
-      py="4"
-      bg="white"
+      gap={6}
+      px={{ base: 6, md: 10 }}
+      py={8}
     >
-      <Text fontSize="xl" fontWeight="bold" color="gray.600">
-        Iades
-      </Text>
-
-      <Box
-        py={{
-          base: "2",
-          sm: "0",
-        }}
-        color="gray.800"
-      >
-        All rights reserved
+      <Box textAlign={{ base: "center", md: "left" }}>
+        <Text fontSize="xl" fontWeight="bold" color="gray.700">
+          Iades Studios
+        </Text>
+        <Text fontSize="sm" color="gray.500" mt={1}>
+          Agia Anna, Naxos, Greece
+        </Text>
       </Box>
 
-      <Flex alignItems="center" justifyContent="center" gap={3}>
+      <Text fontSize="sm" color="gray.500" textAlign="center">
+        &copy; {new Date().getFullYear()} Iades. All rights reserved.
+      </Text>
+
+      <Flex alignItems="center" justifyContent="center" gap={4}>
         <Link
           href="https://www.facebook.com/people/Iades-studios/100021049997015"
           target="_blank"
           rel="noreferrer"
-          color="gray.600"
-          _hover={{
-            color: "var(--chakra-colors-whatsapp-600)",
-          }}
+          color="gray.500"
+          transition="color 0.2s"
+          _hover={{ color: "whatsapp.600" }}
         >
-          <FaFacebookSquare title="Facebook" size="20" />
+          <FaFacebookSquare title="Facebook" size="22" />
         </Link>
         <Link
           href="https://www.instagram.com/iades_studios_naxos"
           target="_blank"
           rel="noreferrer"
-          color="gray.600"
-          _hover={{
-            color: "var(--chakra-colors-whatsapp-600)",
-          }}
+          color="gray.500"
+          transition="color 0.2s"
+          _hover={{ color: "whatsapp.600" }}
         >
           <FaInstagram title="Instagram" size="22" />
         </Link>
@@ -61,16 +57,16 @@ const Footer = () => (
           href="https://www.youtube.com/watch?v=wmMo8bWg92Y"
           target="_blank"
           rel="noreferrer"
-          color="gray.600"
-          _hover={{
-            color: "var(--chakra-colors-whatsapp-600)",
-          }}
+          color="gray.500"
+          transition="color 0.2s"
+          _hover={{ color: "whatsapp.600" }}
         >
-          <IoLogoYoutube title="Youtube" size="22" />
+          <IoLogoYoutube title="Youtube" size="24" />
         </Link>
       </Flex>
     </Flex>
-  </Flex>
+    <Divider borderColor="green.100" />
+  </Box>
 )
 
 export default Footer

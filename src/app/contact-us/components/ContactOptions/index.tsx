@@ -7,6 +7,10 @@ const ContactOptions = () => (
     spacing={{ base: 6, md: 0 }}
     direction={{ base: "column", md: "row" }}
     justifyContent="space-between"
+    bg="white"
+    rounded="xl"
+    shadow="md"
+    p={{ base: 6, md: 4 }}
   >
     {contactOptions.map(({ icon, label, values }, index) => (
       <Flex key={`${label}-${index}`} flex={1}>
@@ -18,7 +22,7 @@ const ContactOptions = () => (
           alignItems="center"
           px={3}
         >
-          <Icon as={icon} w={10} h={10} color="green.400" />
+          <Icon as={icon} w={10} h={10} color="whatsapp.500" />
           <Text fontSize="lg" fontWeight="semibold">
             {label}
           </Text>

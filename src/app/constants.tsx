@@ -72,6 +72,7 @@ import del_studio_sea_view_photo_3 from "/public/images/rooms/del-studio_sea-vie
 import del_studio_sea_view_photo_4 from "/public/images/rooms/del-studio_sea-view/ABOVE - ABOVE - Iades 2021 2 17.jpg"
 import del_studio_sea_view_photo_5 from "/public/images/rooms/del-studio_sea-view/ABOVE - ABOVE - Iades 2021 2 21.jpg"
 import del_studio_sea_view_photo_6 from "/public/images/rooms/del-studio_sea-view/ABOVE - ABOVE - Iades 2021 2 22.jpg"
+import del_studio_sea_view_photo_7 from "/public/images/rooms/del-studio_sea-view/ABOVE - ABOVE - Iades 2021 2 23.jpg"
 
 const DEL_STUDIO_SEA_VIEW_PHOTOS = [
   del_studio_sea_view_photo_1,
@@ -80,6 +81,7 @@ const DEL_STUDIO_SEA_VIEW_PHOTOS = [
   del_studio_sea_view_photo_4,
   del_studio_sea_view_photo_5,
   del_studio_sea_view_photo_6,
+  del_studio_sea_view_photo_7,
 ]
 
 import family_room_photo_1 from "/public/images/rooms/family-room/ABOVE - IADES 2022 1-1.jpg"
@@ -88,6 +90,7 @@ import family_room_photo_3 from "/public/images/rooms/family-room/ABOVE - IADES 
 import family_room_photo_4 from "/public/images/rooms/family-room/ABOVE - IADES 2022 1-20.jpg"
 import family_room_photo_5 from "/public/images/rooms/family-room/ABOVE - IADES 2022 1-21.jpg"
 import family_room_photo_6 from "/public/images/rooms/family-room/ABOVE - IADES 2022 1-24.jpg"
+import family_room_photo_7 from "/public/images/rooms/family-room/ABOVE - IADES 2022 1-25.jpg"
 
 const FAMILY_ROOM_PHOTOS = [
   family_room_photo_1,
@@ -96,6 +99,7 @@ const FAMILY_ROOM_PHOTOS = [
   family_room_photo_4,
   family_room_photo_5,
   family_room_photo_6,
+  family_room_photo_7,
 ]
 
 import studio_two_adults_photo_1 from "/public/images/rooms/studio_two-adults/ABOVE - IADES 2023-79.jpg"

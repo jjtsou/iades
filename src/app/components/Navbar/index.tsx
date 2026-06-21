@@ -34,7 +34,12 @@ const Navbar = () => {
           sm: 4,
         }}
         py={4}
-        shadow="md"
+        shadow="sm"
+        position="sticky"
+        top={0}
+        zIndex="sticky"
+        borderBottom="1px"
+        borderColor={useColorModeValue("gray.100", "gray.700")}
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <HStack display="flex" spacing={3} alignItems="center">
