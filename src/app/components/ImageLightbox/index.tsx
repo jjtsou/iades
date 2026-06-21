@@ -11,8 +11,9 @@ import {
   IconButton,
   Icon,
 } from "@chakra-ui/react"
-import Image, { StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
+import PhotoWithLoader from "@/app/components/PhotoWithLoader"
 
 type ImageLightboxProps = {
   images: StaticImageData[]
@@ -129,13 +130,13 @@ const ImageLightbox = ({
             borderRadius={{ base: "lg", md: "xl" }}
             overflow="hidden"
           >
-            <Image
+            <PhotoWithLoader
               src={selectedImage}
               alt={`${altPrefix} ${selectedIndex + 1}`}
-              fill
+              objectFit="contain"
               sizes="(max-width: 768px) 100vw, 95vw"
-              style={{ objectFit: "contain" }}
               priority
+              loaderBg="blackAlpha.700"
             />
           </Box>
           {showNav && (

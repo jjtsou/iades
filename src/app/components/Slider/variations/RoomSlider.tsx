@@ -1,10 +1,11 @@
 "use client"
 
 import { Box, Flex, Icon, IconButton, Text, useDisclosure } from "@chakra-ui/react"
-import Image, { StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
 import { useState } from "react"
 import { FiChevronLeft, FiChevronRight, FiZoomIn } from "react-icons/fi"
 import ImageLightbox from "@/app/components/ImageLightbox"
+import PhotoWithLoader from "@/app/components/PhotoWithLoader"
 
 const RoomPhotos = ({ roomImages }: { roomImages: StaticImageData[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -46,12 +47,11 @@ const RoomPhotos = ({ roomImages }: { roomImages: StaticImageData[] }) => {
           aria-label="View full-size photo"
           _hover={{ "& .photo-overlay": { opacity: 1 } }}
         >
-          <Image
+          <PhotoWithLoader
             src={roomImages[currentIndex]}
             alt={`Room photo ${currentIndex + 1}`}
-            fill
+            objectFit="cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
-            style={{ objectFit: "cover" }}
             priority={currentIndex === 0}
           />
           <Flex
