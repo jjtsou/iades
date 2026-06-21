@@ -57,12 +57,7 @@ const Room = ({ params: { id } }: { params: { id: string } }) => {
 
           <Stack spacing={8} textAlign={{ base: "center", lg: "left" }}>
             <Box>
-              <Flex
-                flexWrap="wrap"
-                gap={2}
-                mb={4}
-                justify={{ base: "center", lg: "flex-start" }}
-              >
+              <Flex flexWrap="wrap" gap={2} mb={4} justify={{ base: "center", lg: "flex-start" }}>
                 <Badge colorScheme="whatsapp" variant="subtle" px={3} py={1} rounded="md">
                   <Flex alignItems="center" gap={1}>
                     {sqmt}
@@ -165,7 +160,7 @@ const Room = ({ params: { id } }: { params: { id: string } }) => {
                     color="gray.600"
                     fontSize="sm"
                   >
-                    <Icon as={IoCheckmarkOutline} w={4} h={4} color={accentColor} shrink={0} />
+                    <Icon as={IoCheckmarkOutline} w={4} h={4} color={accentColor} />
                     {facility}
                   </ListItem>
                 ))}
