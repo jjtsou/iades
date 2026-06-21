@@ -1,21 +1,18 @@
 "use client"
 
-import { Container, Stack, Heading, Flex, Text } from "@chakra-ui/react"
+import { Container, Stack } from "@chakra-ui/react"
 import ContactOptions from "./components/ContactOptions"
 import ContactForm from "./components/ContactForm"
+import SectionHeader from "@/app/components/SectionHeader"
 
 const ContactUs = () => (
-  <Container maxW="7xl" py={10} px={{ base: 5, md: 8 }}>
+  <Container maxW="7xl" py={{ base: 8, md: 12 }} px={{ base: 5, md: 8 }}>
     <Stack spacing={10}>
-      <Flex align="center" justifyContent="center" direction="column">
-        <Heading fontSize="4xl" mb={2}>
-          Contact Us
-        </Heading>
-        <Text fontSize="md" textAlign="center">
-          If you have any questions, concerns, or need assistance, please reach out to us. We're
-          here to help!
-        </Text>
-      </Flex>
+      <SectionHeader
+        eyebrow="Get in Touch"
+        title="Contact Us"
+        description="If you have any questions, concerns, or need assistance, please reach out to us. We're here to help!"
+      />
       <ContactOptions />
       <ContactForm />
     </Stack>

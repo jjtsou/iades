@@ -1,102 +1,54 @@
 "use client"
 
-import { SimpleGrid, Flex, chakra, Text, Box } from "@chakra-ui/react"
+import { SimpleGrid, Flex, Text, Box } from "@chakra-ui/react"
 import Image from "next/image"
 import imgNaxos from "/public/images/naxos/naxos11.jpg"
+import SectionHeader from "@/app/components/SectionHeader"
 
 const AboutUs = () => (
-  <Flex direction="column">
-    <SimpleGrid
-      columns={{
-        base: 1,
-        md: 2,
-      }}
-    >
+  <Flex direction="column" w="full">
+    <SimpleGrid columns={{ base: 1, lg: 2 }} minH={{ lg: "600px" }}>
       <Flex
         direction="column"
         alignItems="start"
-        justifyContent="start"
-        px={{
-          base: 4,
-          lg: 20,
-        }}
-        py={24}
+        justifyContent="center"
+        px={{ base: 6, md: 12, lg: 20 }}
+        py={{ base: 12, lg: 16 }}
+        bg="white"
       >
-        <chakra.h1
-          mb={6}
-          fontSize={{
-            base: "4xl",
-            md: "4xl",
-            lg: "5xl",
-          }}
-          fontWeight="bold"
-          color="brand.600"
-          lineHeight="shorter"
-        >
-          About Us
-        </chakra.h1>
-        <Text
-          pr={{
-            base: 0,
-            lg: 16,
-          }}
-          mb={4}
-          color="brand.600"
-          letterSpacing="wider"
-        >
-          Located on the enchanting island of Naxos, Iades Studios offers a tranquil haven for
-          travelers seeking serenity and relaxation amidst the stunning landscapes of the Aegean
-          Sea. Our boutique accommodation is nestled in Agia Anna, providing guests with convenient
-          access to Naxos' pristine beaches and vibrant culture.
-        </Text>
-        <Text
-          pr={{
-            base: 0,
-            lg: 16,
-          }}
-          mb={4}
-          color="brand.600"
-          letterSpacing="wider"
-        >
-          At Iades Studios, we pride ourselves on delivering an authentic Greek island experience
-          with a personal touch. As a family-operated establishment, we extend the warm hospitality
-          that Naxos is renowned for, ensuring that every guest feels at home from the moment they
-          arrive.
-        </Text>
-        <Text
-          pr={{
-            base: 0,
-            lg: 16,
-          }}
-          mb={4}
-          color="brand.600"
-          letterSpacing="wider"
-        >
-          Whether you're looking for a cozy retreat for a romantic escape or comfortable lodging for
-          a family vacation, we offer a range of options to suit your preferences. In addition to
-          our inviting accommodations, guests at Iades Studios can enjoy a variety of amenities and
-          services designed to enhance their stay.
-        </Text>
-        <Text
-          pr={{
-            base: 0,
-            lg: 16,
-          }}
-          mb={4}
-          color="brand.600"
-          letterSpacing="wider"
-        >
-          As advocates for sustainable tourism, we are committed to minimizing our environmental
-          impact and supporting the local community. We source locally produced goods for our studio
-          provisions and implement eco-conscious practices throughout our property to preserve
-          Naxos' natural beauty for future generations to enjoy.Whether you're embarking on a
-          romantic getaway, a family holiday, or an adventure-filled retreat, we invite you to
-          experience the tranquility and charm of Iades Studios in Naxos. We look forward to hosting
-          you and creating cherished memories together.
-        </Text>
+        <Box mb={8}>
+          <SectionHeader
+            align="left"
+            eyebrow="Our Story"
+            title="About Us"
+            description="Located on the enchanting island of Naxos, Iades Studios offers a peaceful retreat for travelers seeking serenity amidst the stunning landscapes of the Aegean Sea."
+          />
+        </Box>
+        <Flex direction="column" gap={4}>
+          <Text color="gray.600" lineHeight="tall">
+            Our boutique accommodation is nestled in Agia Anna, providing guests with convenient
+            access to Naxos&apos; pristine beaches and vibrant culture. As a family-operated
+            establishment, we extend the warm hospitality that Naxos is renowned for.
+          </Text>
+          <Text color="gray.600" lineHeight="tall">
+            Whether you&apos;re looking for a cozy retreat for a romantic escape or comfortable
+            lodging for a family vacation, we offer a range of options to suit your preferences.
+          </Text>
+          <Text color="gray.600" lineHeight="tall">
+            As advocates for sustainable tourism, we are committed to minimizing our environmental
+            impact and supporting the local community. We invite you to experience the warmth and charm of Iades Studios in Naxos.
+          </Text>
+        </Flex>
       </Flex>
-      <Box>
-        <Image src={imgNaxos} alt="Image of Naxos beach" priority />
+      <Box position="relative" minH={{ base: "300px", lg: "auto" }}>
+        <Image
+          src={imgNaxos}
+          alt="Naxos beach near Iades Studios"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          style={{ objectFit: "cover" }}
+        />
       </Box>
     </SimpleGrid>
   </Flex>

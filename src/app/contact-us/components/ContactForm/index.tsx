@@ -85,13 +85,11 @@ const ContactForm = () => {
       <VStack w="100%">
         <Button
           type="submit"
-          bg="green.300"
-          color="white"
-          _hover={{
-            bg: "green.500",
-          }}
+          colorScheme="whatsapp"
+          size="lg"
           rounded="md"
           w={{ base: "100%", md: "max-content" }}
+          px={10}
         >
           Send Message
         </Button>

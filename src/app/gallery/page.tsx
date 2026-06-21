@@ -1,19 +1,17 @@
 "use client"
 
-import { Container, Heading, Stack, Text, Flex } from "@chakra-ui/react"
+import { Container, Stack } from "@chakra-ui/react"
 import Gallery from "@/app/components/Gallery"
+import SectionHeader from "@/app/components/SectionHeader"
 
 const GalleryPage = () => (
-  <Container maxW="7xl" py={10} px={{ base: 5, md: 8 }}>
+  <Container maxW="7xl" py={{ base: 8, md: 12 }} px={{ base: 5, md: 8 }}>
     <Stack spacing={10}>
-      <Flex align="center" justifyContent="center" direction="column">
-        <Heading fontSize="4xl" mb={2}>
-          Gallery
-        </Heading>
-        <Text fontSize="md" textAlign="center">
-          Explore our collection of photos and see the beauty of our location and accommodation.
-        </Text>
-      </Flex>
+      <SectionHeader
+        eyebrow="Visual Tour"
+        title="Gallery"
+        description="Explore our collection of photos and discover the beauty of our location and accommodation."
+      />
       <Gallery />
     </Stack>
   </Container>

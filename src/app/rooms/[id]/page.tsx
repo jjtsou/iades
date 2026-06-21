@@ -13,126 +13,174 @@ import {
   ListItem,
   Icon,
   Flex,
-  useBreakpointValue,
-  keyframes,
+  Badge,
+  Divider,
 } from "@chakra-ui/react"
+import { Link } from "@chakra-ui/next-js"
 import { RoomSlider } from "@/app/components/Slider/variations"
 import { properties } from "@/app/constants"
 import { IoCheckmarkOutline } from "react-icons/io5"
-import Link from "next/link"
-import { motion } from "framer-motion"
-
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-`
+import { IoMdPerson } from "react-icons/io"
+import { TbMeterSquare } from "react-icons/tb"
+import { FiArrowLeft } from "react-icons/fi"
 
 const Room = ({ params: { id } }: { params: { id: string } }) => {
-  const { title, description, roomImages, details, facilities } = properties[id]
+  const { title, description, roomImages, details, facilities, people, beds, sofas, sqmt } =
+    properties[id]
 
-  const headingSize = useBreakpointValue({ base: "2xl", sm: "3xl", lg: "4xl" })
-  const buttonSize = useBreakpointValue({ base: "md", md: "lg" })
+  const sectionBg = useColorModeValue("gray.50", "gray.800")
+  const cardBg = useColorModeValue("white", "gray.700")
+  const accentColor = "green.400"
 
   return (
-    <Container maxW={"7xl"} py={{ base: 10, md: 20 }}>
-      <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, md: 12 }} textAlign="center">
-        <Box as={motion.div} animation={`${fadeIn} 0.8s ease-out`}>
-          <RoomSlider roomImages={roomImages} />
-        </Box>
-        <Stack
-          spacing={{ base: 8, md: 10 }}
-          mt={{ sm: 8, md: 0 }}
-          as={motion.div}
-          animation={`${fadeIn} 0.8s ease-out 0.2s`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+    <Container maxW="7xl" py={{ base: 6, md: 12 }} px={{ base: 4, md: 8 }}>
+      <Stack spacing={{ base: 8, md: 10 }}>
+        <Link
+          href="/rooms"
+          display="inline-flex"
+          alignItems="center"
+          gap={2}
+          color="gray.600"
+          fontWeight="medium"
+          fontSize="sm"
+          w="fit-content"
+          _hover={{ color: "whatsapp.600" }}
         >
-          <Box as={"header"}>
-            <Heading
-              lineHeight={1.1}
-              fontWeight={600}
-              fontSize={headingSize}
-              color="gray.700"
-              mb={4}
-            >
-              {title}
-            </Heading>
-            <Text
-              color={useColorModeValue("gray.600", "gray.400")}
-              fontSize="xl"
-              fontWeight="300"
-              maxW="2xl"
-              mx="auto"
-            >
-              {description}
-            </Text>
+          <Icon as={FiArrowLeft} />
+          All Rooms
+        </Link>
+
+        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 8, lg: 12 }} alignItems="start">
+          <Box position={{ lg: "sticky" }} top={{ lg: 24 }}>
+            <RoomSlider roomImages={roomImages} />
           </Box>
-          <Box bg={useColorModeValue("gray.50", "gray.800")} p={6} borderRadius="lg" boxShadow="md">
-            <Text fontSize="xl" color="green.400" fontWeight="600" textTransform="uppercase" mb={4}>
-              Room Details
-            </Text>
-            <List
-              display="grid"
-              gridTemplateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-              gap={4}
-            >
-              {details.map(({ name, icon }) => (
-                <ListItem
-                  key={name}
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  gap={2}
-                  p={2}
-                  bg={useColorModeValue("white", "gray.700")}
-                  borderRadius="md"
-                  boxShadow="sm"
-                >
-                  <Icon as={icon} w={6} h={6} color="green.400" />
-                  <Text as={"span"} fontSize="md" fontWeight="500">
-                    {name}
-                  </Text>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-          <Box bg={useColorModeValue("gray.50", "gray.800")} p={6} borderRadius="lg" boxShadow="md">
-            <Text fontSize="xl" color="green.400" fontWeight="600" textTransform="uppercase" mb={4}>
-              Facilities
-            </Text>
-            <List
-              display="grid"
-              gridTemplateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
-              gap={4}
-            >
-              {facilities.map(facility => (
-                <ListItem
-                  key={facility}
-                  display="flex"
-                  alignItems="center"
-                  gap={2}
-                  p={2}
-                  bg={useColorModeValue("white", "gray.700")}
-                  borderRadius="md"
-                  boxShadow="sm"
-                >
-                  <Icon as={IoCheckmarkOutline} w={5} h={5} color="green.400" />
-                  <Text as={"span"} fontSize="md" fontWeight="500">
+
+          <Stack spacing={8} textAlign={{ base: "center", lg: "left" }}>
+            <Box>
+              <Flex
+                flexWrap="wrap"
+                gap={2}
+                mb={4}
+                justify={{ base: "center", lg: "flex-start" }}
+              >
+                <Badge colorScheme="whatsapp" variant="subtle" px={3} py={1} rounded="md">
+                  <Flex alignItems="center" gap={1}>
+                    {sqmt}
+                    <TbMeterSquare size={14} />
+                  </Flex>
+                </Badge>
+                <Badge colorScheme="gray" variant="subtle" px={3} py={1} rounded="md">
+                  <Flex alignItems="center" gap={0.5}>
+                    {Array(people)
+                      .fill("")
+                      .map((_, i) => (
+                        <IoMdPerson key={i} size={14} />
+                      ))}
+                  </Flex>
+                </Badge>
+                <Badge colorScheme="gray" variant="subtle" px={3} py={1} rounded="md">
+                  {beds} bed{beds > 1 ? "s" : ""}
+                </Badge>
+                {sofas ? (
+                  <Badge colorScheme="gray" variant="subtle" px={3} py={1} rounded="md">
+                    {sofas} sofa bed{sofas > 1 ? "s" : ""}
+                  </Badge>
+                ) : null}
+              </Flex>
+
+              <Heading
+                as="h1"
+                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                fontWeight="bold"
+                color="gray.700"
+                lineHeight="shorter"
+                mb={4}
+              >
+                {title}
+              </Heading>
+              <Text color="gray.600" fontSize={{ base: "md", md: "lg" }} lineHeight="tall">
+                {description}
+              </Text>
+            </Box>
+
+            <Box bg={sectionBg} p={{ base: 5, md: 6 }} borderRadius="xl" boxShadow="sm">
+              <Text
+                fontSize="sm"
+                color={accentColor}
+                fontWeight="bold"
+                textTransform="uppercase"
+                letterSpacing="wider"
+                mb={4}
+              >
+                Room Details
+              </Text>
+              <SimpleGrid columns={{ base: 1, sm: 2 }} gap={3}>
+                {details.map(({ name, icon }) => (
+                  <Flex
+                    key={name}
+                    alignItems="center"
+                    gap={3}
+                    p={3}
+                    bg={cardBg}
+                    borderRadius="lg"
+                    boxShadow="sm"
+                  >
+                    <Flex
+                      alignItems="center"
+                      justifyContent="center"
+                      w={10}
+                      h={10}
+                      borderRadius="md"
+                      bg="green.50"
+                      shrink={0}
+                    >
+                      <Icon as={icon} w={5} h={5} color={accentColor} />
+                    </Flex>
+                    <Text fontSize="sm" fontWeight="medium" color="gray.700">
+                      {name}
+                    </Text>
+                  </Flex>
+                ))}
+              </SimpleGrid>
+            </Box>
+
+            <Box bg={sectionBg} p={{ base: 5, md: 6 }} borderRadius="xl" boxShadow="sm">
+              <Text
+                fontSize="sm"
+                color={accentColor}
+                fontWeight="bold"
+                textTransform="uppercase"
+                letterSpacing="wider"
+                mb={4}
+              >
+                Facilities
+              </Text>
+              <List spacing={2}>
+                {facilities.map(facility => (
+                  <ListItem
+                    key={facility}
+                    display="flex"
+                    alignItems="center"
+                    gap={3}
+                    color="gray.600"
+                    fontSize="sm"
+                  >
+                    <Icon as={IoCheckmarkOutline} w={4} h={4} color={accentColor} shrink={0} />
                     {facility}
-                  </Text>
-                </ListItem>
-              ))}
-            </List>
-          </Box>
-          <Flex justifyContent="center" mt={6}>
-            <Link href="tel:+306972441744">
+                  </ListItem>
+                ))}
+              </List>
+            </Box>
+
+            <Divider borderColor="gray.200" />
+
+            <Flex justify={{ base: "center", lg: "flex-start" }}>
               <Button
-                size={buttonSize}
-                fontWeight={500}
-                variant="solid"
+                as={Link}
+                href="tel:+306972441744"
+                size="lg"
                 colorScheme="whatsapp"
                 px={8}
-                py={6}
                 borderRadius="full"
                 boxShadow="lg"
                 _hover={{ transform: "translateY(-2px)", boxShadow: "xl" }}
@@ -140,10 +188,10 @@ const Room = ({ params: { id } }: { params: { id: string } }) => {
               >
                 Contact Us for Details
               </Button>
-            </Link>
-          </Flex>
-        </Stack>
-      </SimpleGrid>
+            </Flex>
+          </Stack>
+        </SimpleGrid>
+      </Stack>
     </Container>
   )
 }

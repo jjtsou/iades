@@ -36,10 +36,12 @@ const config = {
 }
 
 const RoomsSlider = ({ properties = defaultProperties }: { properties?: Properties }) => (
-  <Box className="slider-container" w="100%" maxW="70vw" m="auto" pb="10">
+  <Box className="slider-container" w="100%" maxW={{ base: "95vw", lg: "80vw" }} mx="auto" pb={10} px={2}>
     <SlickSlider {...config}>
       {Object.keys(properties).map(propertyId => (
-        <Card key={propertyId} id={propertyId} property={properties[propertyId]} />
+        <Box key={propertyId} px={3} py={2}>
+          <Card id={propertyId} property={properties[propertyId]} />
+        </Box>
       ))}
     </SlickSlider>
   </Box>

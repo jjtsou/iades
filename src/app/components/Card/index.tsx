@@ -1,5 +1,5 @@
 import { Link } from "@chakra-ui/next-js"
-import { Flex, Box, Text, Button } from "@chakra-ui/react"
+import { Flex, Box, Text, Button, Badge } from "@chakra-ui/react"
 import Image from "next/image"
 import { Property } from "@/app/types"
 import { IoMdPerson } from "react-icons/io"
@@ -17,71 +17,71 @@ const Card = ({
       direction="column"
       bg="white"
       borderWidth="1px"
-      rounded="lg"
-      shadow="lg"
-      m={{
-        base: 2,
-        sm: 4,
-        md: 8,
-        lg: 10,
-        xl: 12,
-      }}
-      transition="all 0.2s ease"
+      borderColor="gray.100"
+      rounded="xl"
+      shadow="md"
+      h="full"
+      overflow="hidden"
+      transition="all 0.25s ease"
       _hover={{
-        transform: "translateY(-4px)",
+        transform: "translateY(-6px)",
         shadow: "xl",
+        borderColor: "whatsapp.100",
       }}
     >
-      <Image src={imageUrl} alt={imageAlt} />
-      <Box px="2" py="6">
-        <Flex alignItems="baseline">
-          <Flex
-            alignItems="center"
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            gap={1}
-          >
-            <Flex alignItems="center">
-              <Text>{sqmt}</Text>
-              <TbMeterSquare size={20} />
+      <Box position="relative" overflow="hidden" aspectRatio={4 / 3}>
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          style={{ objectFit: "cover", transition: "transform 0.4s ease" }}
+        />
+      </Box>
+      <Box px={5} py={5} flex={1} display="flex" flexDirection="column">
+        <Flex alignItems="center" flexWrap="wrap" gap={2} mb={3}>
+          <Badge colorScheme="whatsapp" variant="subtle" fontSize="xs" px={2} py={0.5} rounded="md">
+            <Flex alignItems="center" gap={0.5}>
+              {sqmt}
+              <TbMeterSquare size={14} />
             </Flex>
-            <Text> &bull;</Text>
-            <Flex>
+          </Badge>
+          <Badge colorScheme="gray" variant="subtle" fontSize="xs" px={2} py={0.5} rounded="md">
+            <Flex alignItems="center" gap={0.5}>
               {Array(people)
                 .fill("")
                 .map((_, i) => (
-                  <IoMdPerson key={i} />
+                  <IoMdPerson key={i} size={12} />
                 ))}
             </Flex>
-            <Text> &bull;</Text>
-            <Text textTransform="uppercase">
-              {beds} bed{beds > 1 ? "s" : ""}
-            </Text>
-            {sofas ? (
-              <>
-                <Text> &bull;</Text>
-                <Text textTransform="uppercase">
-                  {sofas} sofa bed{sofas > 1 ? "s" : ""}
-                </Text>
-              </>
-            ) : null}
-          </Flex>
+          </Badge>
+          <Badge colorScheme="gray" variant="subtle" fontSize="xs" px={2} py={0.5} rounded="md">
+            {beds} bed{beds > 1 ? "s" : ""}
+          </Badge>
+          {sofas ? (
+            <Badge colorScheme="gray" variant="subtle" fontSize="xs" px={2} py={0.5} rounded="md">
+              {sofas} sofa bed{sofas > 1 ? "s" : ""}
+            </Badge>
+          ) : null}
         </Flex>
 
-        <Text mt="1" fontWeight="semibold" as="h4">
+        <Text fontWeight="semibold" fontSize="lg" color="gray.800" mb={4}>
           {title}
         </Text>
-      </Box>
-      {/* <Link href={`/blog/${post.slug}`}>{post.title}</Link> */}
-      <Flex mb="6" justifyContent="center" alignItems="center">
-        <Link href={`/rooms/${id}`}>
-          <Button fontSize="sm" fontWeight={400} variant="outline" colorScheme="whatsapp">
-            Details
+
+        <Flex mt="auto" justifyContent="center">
+          <Button
+            as={Link}
+            href={`/rooms/${id}`}
+            w="full"
+            size="md"
+            variant="outline"
+            colorScheme="whatsapp"
+          >
+            View Details
           </Button>
-        </Link>
-      </Flex>
+        </Flex>
+      </Box>
     </Flex>
   )
 }

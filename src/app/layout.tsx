@@ -3,7 +3,7 @@ import { Inter } from "next/font/google"
 import { Providers } from "./providers"
 import Navbar from "./components/Navbar"
 import { ReactNode } from "react"
-import { Flex } from "@chakra-ui/react"
+import { Box, Flex } from "@chakra-ui/react"
 import Footer from "./components/Footer"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -46,13 +46,14 @@ const Layout = ({
     alignItems="center"
     w="100%"
     maxW="100vw"
-    h="100vh"
-    maxH="100%"
+    minH="100vh"
   >
-    <Analytics/>
+    <Analytics />
     <SpeedInsights />
     <Navbar />
-    {children}
+    <Box as="main" flex={1} w="full">
+      {children}
+    </Box>
     <Footer />
   </Flex>
 )
